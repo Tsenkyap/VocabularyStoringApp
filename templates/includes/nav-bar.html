@@ -1,20 +1,35 @@
  <nav>
     <div class="nav-wrapper">
-      <a href="{% url 'wordmeaning:main'%}" class="brand-logo left" style="padding-left: 20px;font-weight: bolder;">Vocab Room</a>
-
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-    	{% if user.is_authenticated %}
+      <a href="{% url 'wordmeaning:main'%}" class="brand-logo">VocabRoom</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        {% if user.is_authenticated %}
         
           <li><a style="font-size: 30px;font-weight: bold;" href="{% url 'wordmeaning:entries'%}"> Add a word</a></li>
-        	
+          
           <li><a href="{% url 'wordmeaning:main'%}" >{{ user.username}}</a></li>
           <li><a href="{% url 'users:logout'%}" >Logout</a></li>
 
       {% else %}
-      	<li><a href="{% url 'users:register'%}" style="font-size: 25px;">Register</a></li>
-      	<li><a href="{% url 'users:login'%}" style="font-size: 25px;">Login</a></li>
+        <li><a href="{% url 'users:register'%}" style="font-size: 25px;">Register</a></li>
+        <li><a href="{% url 'users:login'%}" style="font-size: 25px;">Login</a></li>
       {% endif %}
-        </ul>
-      
+      </ul>
     </div>
   </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    {% if user.is_authenticated %}
+        
+          <li><a style="font-size: 30px;font-weight: bold;" href="{% url 'wordmeaning:entries'%}"> Add a word</a></li>
+          
+          <li><a href="{% url 'wordmeaning:main'%}" >{{ user.username}}</a></li>
+          <li><a href="{% url 'users:logout'%}" >Logout</a></li>
+
+      {% else %}
+        <li><a href="{% url 'users:register'%}" style="font-size: 25px;">Register</a></li>
+        <li><a href="{% url 'users:login'%}" style="font-size: 25px;">Login</a></li>
+      {% endif %}
+  </ul>
+
+ 
