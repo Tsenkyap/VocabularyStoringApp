@@ -25,7 +25,7 @@ SECRET_KEY = 'j+)c!q-f8*f#_tbvn6=4kym7fhsp^r29=3f@piq2a-v9)*9-@#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mywordstoringapp.herokuapp.com']
 
 
 # Application definition
