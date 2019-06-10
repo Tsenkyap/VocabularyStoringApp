@@ -2,11 +2,14 @@
 
 {% block content%}
 	{% for words in all_word %}
-		{{words.your_word }}	<br>
-		{{words.word_added}}<br>
+		<h3>{{words.your_word }}</h3>
+		<p>{{words.word_added}}<br>
 		{{words.meaning}}<br>
-		{{words.make_sentence}}<br>
+		{{words.make_sentence}}</p>
 		<hr>
+		
+		
 	{% endfor %}
+	
 
 {% endblock%}

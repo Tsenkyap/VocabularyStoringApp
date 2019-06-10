@@ -4,7 +4,7 @@ from .forms import WordForm
 from django.contrib import messages
 
 def main(request):
-	all_word = Word.objects.all()
+	all_word = Word.objects.all().order_by('-word_added')
 	return render(request, 
 				  'wordmeaning/home.html',
 				  {'all_word':all_word})
@@ -14,7 +14,7 @@ def entries(request):
 		wording = WordForm(request.POST)
 		if wording.is_valid():
 			wording.save()
-			return redirect('main')
+			return redirect('wordmeaning:main')
 	else:
 		wording = WordForm()
 	
