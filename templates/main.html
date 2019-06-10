@@ -2,7 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>home</title>
+	{% block title %}
+		<title>Base</title>
+	{% endblock %}
+	<meta charset="UTF-8">
+	  <meta name="description" content="Add your vocabulary that you think you don't want it to disappear later on.Perfect place to store your vocabulary.">
+	  <meta name="keywords" content="enriching words and vocabulary,Vocabulary master">
+	  <meta name="author" content="Tsering Tsenkyap Gurung">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{% static 'wordmeaning/bootstrap.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'wordmeaning/bulma.min.css' %}">
