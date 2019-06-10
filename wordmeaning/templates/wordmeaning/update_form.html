@@ -3,7 +3,7 @@
 	
 	
 	<div class="container-fluid">
-		<h2 style="text-align:center;">Save your vocabulary</h2>
+		<h2 style="text-align:center;">Update your vocabulary</h2>
 		<div class="row">
 
 			<div class="col-md-6 offset-md-3">
@@ -11,11 +11,9 @@
 
 				<form method="POST"  enctype='multipart/form-data' action="">
 					{% csrf_token %}
-					{{ wording.your_word}}
-					{{ wording.meaning}}
-					{{ wording.make_sentence}}
+					{{ form.as_p}}
 					<br>
-					<button class='btn' type="submit" role='button' style="background-color: green;"> Save for future</button>
+					<button class='btn' type="submit" role='button' style="background-color: green;">Update</button>
 				</form>
 				<br>
 				<br>

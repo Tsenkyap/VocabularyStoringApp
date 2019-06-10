@@ -1,15 +1,45 @@
-{% extends 'wordmeaning/main.html'%}
+{% extends 'main.html'%}
+{% load humanize %}
+{% block home%}
 
-{% block content%}
-	{% for words in all_word %}
-		<h3>{{words.your_word }}</h3>
-		<p>{{words.word_added}}<br>
-		{{words.meaning}}<br>
-		{{words.make_sentence}}</p>
-		<hr>
-		
-		
-	{% endfor %}
-	
+			<div class="hero is-small is-info is-bold">
+				<div class="hero-body">
+					<div class="container">
+						<h1 class="display-2">Word store</h1>
+					</div>
+				</div>
+			</div>
+		<br><br>
+		<div class="container-fluid">
+			<div class="row">
+				{% for words in all_word %}
+				<div class="col-md-4">
+
+				  <div class="row">
+				    <div class="col s12 m6">
+				      <div class="card blue-grey darken-1">
+				        <div class="card-content white-text">
+				          <span class="card-title" style="font-size: 55px;">{{words.your_word }}</span>
+				          <br>
+				          <span style="font-style: italic;">Meaning : <p> {{words.meaning}}</p><br></span>
+				          <span style="font-style: italic;">Sentence : <p> {{words.make_sentence}}</p></span> 
+				        </div>
+				        <div class="card-action">
+
+				          	{% if words.added_by == request.user %}
+									    <a href="/entries/{{words.pk}}/update/"><button  class='btn' type="submit" role='button' class="light-blue darken-2">Edit</button></a>
+										<a href="/entries/{{words.pk}}/delete/"><button  class='btn' type="submit" role='button' style="background-color: #FF6347">Delete</button></a>
+							{% endif %}
+						<br>
+						<p class="white-text">By {{ words.added_by}} on {{words.word_added|naturaltime}}</p>
+								    
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		{% endfor %}
+		 </div>
+		</div>
 
 {% endblock%}

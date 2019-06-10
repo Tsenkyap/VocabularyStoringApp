@@ -4,7 +4,7 @@ from . models import Word
 class WordForm(forms.ModelForm):
 	class Meta:
 		model = Word
-		fields = ('your_word','meaning','make_sentence' ,)
+		fields = ('your_word','meaning','make_sentence',)
 		widgets = {
 					'your_word': forms.TextInput(attrs={'class' : 'textarea','placeholder':'word'}),
 					'meaning': forms.TextInput(attrs={'class':'textarea','placeholder':'write a meaning'}),

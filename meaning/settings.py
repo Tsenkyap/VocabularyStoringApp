@@ -33,6 +33,8 @@ ALLOWED_HOSTS = ['mywordstoringapp.herokuapp.com']
 
 INSTALLED_APPS = [
     'wordmeaning',
+    'users',
+    'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'meaning.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -107,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Katmandu'
+TIME_ZONE = 'Asia/Kathmandu'
 
 USE_I18N = True
 
@@ -122,4 +124,8 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = 'accounts/login/'
+
 django_heroku.settings(locals())
+
+

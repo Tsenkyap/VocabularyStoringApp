@@ -1,0 +1,23 @@
+{% extends 'main.html'%}
+{% block content %}
+<br><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			<h1>Login </h1>
+			<br>
+				<form method="POST">
+					{% csrf_token %}
+					{{ form.as_p}}
+					
+					<p class="text-muted">Havent Signed up? <a href="{% url 'users:register'%}">Register </a>here</p>
+					<br>
+					<button type="submit" class="btn btn-secondary">Login</button>
+				</form>
+
+		</div>
+	</div>
+</div>
+<br><br>
+	
+{% endblock %}
