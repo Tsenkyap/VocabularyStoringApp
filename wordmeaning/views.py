@@ -21,7 +21,7 @@ def entries(request):
 			print(word.added_by)
 			word.added_by = request.user
 			word.save()
-			messages.info(request,'Successfully added')
+			messages.success(request,'Successfully added')
 			return redirect('wordmeaning:main')
 	else:
 		wording = WordForm()
