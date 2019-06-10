@@ -1,0 +1,11 @@
+{% extends 'wordmeaning/main.html'%}
+{% block content %}
+	<form method="POST"  enctype='multipart/form-data' action="">
+		{% csrf_token %}
+		{{ wording.your_word}}
+		{{ wording.meaning}}
+		{{ wording.make_sentence}}
+		<br>
+		<button class='btn' type="submit" role='button' style="background-color: green;"> Save for future</button>
+	</form>
+{% endblock %}

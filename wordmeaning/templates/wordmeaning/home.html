@@ -1,0 +1,12 @@
+{% extends 'wordmeaning/main.html'%}
+
+{% block content%}
+	{% for words in all_word %}
+		{{words.your_word }}	<br>
+		{{words.word_added}}<br>
+		{{words.meaning}}<br>
+		{{words.make_sentence}}<br>
+		<hr>
+	{% endfor %}
+
+{% endblock%}
