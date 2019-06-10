@@ -6,9 +6,9 @@ class WordForm(forms.ModelForm):
 		model = Word
 		fields = ('your_word','meaning','make_sentence',)
 		widgets = {
-					'your_word': forms.TextInput(attrs={'class' : 'textarea','placeholder':'word'}),
-					'meaning': forms.TextInput(attrs={'class':'textarea','placeholder':'write a meaning'}),
-					'make_sentence': forms.Textarea(attrs={'class' : 'textarea','placeholder':'write a sentence'})
+					'your_word': forms.TextInput(attrs={'class' : 'textarea','placeholder':'Word'}),
+					'meaning': forms.TextInput(attrs={'class':'textarea','placeholder':'Place the Meaning'}),
+					'make_sentence': forms.Textarea(attrs={'class' : 'textarea','placeholder':'Place your sentence'})
 
 		}
 	# def __init__(self,*args,**kwargs):
